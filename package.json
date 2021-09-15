@@ -1,25 +1,27 @@
 {
   "name": "@jiriKralovec/nucleus",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "description": "Simple TypeScript web component library for building fast and simple websites",
-  "main": "main.js",
-  "types": "main.d.ts",
-  "files": [
-    "build"
-  ],
+  "main": "www/main.js",
+  "types": "www/main.d.ts",
   "author": "Jiri Kralovec <jiri.kralovec17@gmail.com>",
   "license": "ISC",
   "scripts": {
     "start": "npx webpack -w -c webpack.config.js",
-    "build": "npx webpack -c webpack.config.prod.js"
+    "build": "npx webpack -c webpack.config.prod.js",
+    "deploy": "npm publish ./build"
   },
   "keywords": [
     "templating",
     "web"
   ],
+  "files": [
+    "www/**/*"
+  ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/jiriKralovec/nucleus.git"
+    "url": "https://github.com/jiriKralovec/nucleus.git",
+    "directory": "packages"
   },
   "homepage": "https://github.com/jiriKralovec/nucleus",
   "bugs": {
@@ -38,6 +40,7 @@
     "@types/node": "^16.9.1",
     "awesome-typescript-loader": "^5.2.1",
     "copy-webpack-plugin": "^9.0.1",
+    "remove-files-webpack-plugin": "^1.4.5",
     "source-map-loader": "^3.0.0",
     "ts-loader": "^9.2.5",
     "tslint": "^6.1.3",

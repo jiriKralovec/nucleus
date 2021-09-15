@@ -1,5 +1,6 @@
 const path = require('path');
 const CopyPlugin = require("copy-webpack-plugin");
+const RemovePlugin = require("remove-files-webpack-plugin");
 
 module.exports = [
     {
@@ -7,7 +8,7 @@ module.exports = [
         mode: 'production',
         output: {
             filename: '[name].js',
-            path: path.resolve(__dirname, 'build'),
+            path: path.resolve(__dirname, 'build/www'),
             clean: true,
             library: "nucleus",
             libraryTarget: "umd",
@@ -33,9 +34,16 @@ module.exports = [
             extensions: ['.tsx', '.ts', '.js']
         },
         plugins: [
+            new RemovePlugin({
+                before: {
+                    include: [
+                        './build'
+                    ]
+                }
+            }),
             new CopyPlugin({
                 patterns: [
-                    { from: 'package.json', to: 'package.json' }
+                    { from: 'package.json', to: '../package.json' }
                 ]
             })
         ],

@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "outDir": "./build/",
+    "outDir": "./build/www/",
     "noImplicitAny": true,
     "sourceMap": false,
     "module": "es6",
