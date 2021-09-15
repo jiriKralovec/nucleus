@@ -12,7 +12,7 @@
   "scripts": {
     "start": "npx webpack -w -c webpack.config.js",
     "build": "npx webpack -c webpack.config.prod.js",
-    "publish": "npm run build && npm publish"
+    "publish": "npm publish"
   },
   "keywords": [
     "templating",
