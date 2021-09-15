@@ -11,10 +11,12 @@
   "license": "ISC",
   "scripts": {
     "start": "npx webpack -w -c webpack.config.js",
-    "build": "npx webpack -c webpack.config.prod.js"
+    "build": "npx webpack -c webpack.config.prod.js",
+    "publish": "npm run build && npm publish"
   },
   "keywords": [
-    "templating", "web"
+    "templating",
+    "web"
   ],
   "repository": {
     "type": "git",
@@ -25,7 +27,7 @@
     "url": "https://github.com/jiriKralovec/nucleus/issues"
   },
   "publishConfig": {
-    "registry":"https://npm.pkg.github.com"
+    "registry": "https://npm.pkg.github.com"
   },
   "devDependencies": {
     "@babel/cli": "^7.15.4",
@@ -46,5 +48,6 @@
     "webpack-cli": "^4.8.0",
     "webpack-dev-server": "^4.2.1",
     "webpack-glob-entry": "^2.1.1"
-  }
+  },
+  "dependencies": {}
 }
