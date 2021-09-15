@@ -1,6 +1,6 @@
 {
   "name": "@jiirkralovec/nucleus",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Simple TypeScript web component library for building fast and simple websites",
   "main": "www/main.js",
   "types": "www/main.d.ts",
