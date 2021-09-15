@@ -1,18 +1,28 @@
 {
-  "name": "mylib",
-  "version": "1.0.0",
-  "description": "",
+  "name": "@jiriKralovec/nucleus",
+  "version": "0.0.1",
+  "description": "Simple TypeScript web component library for building fast and simple websites",
   "main": "build/main.js",
   "types": "build/main.d.ts",
   "files": [
     "build"
   ],
-  "author": "",
+  "author": "Jiri Kralovec <jiri.kralovec17@gmail.com>",
   "license": "ISC",
   "scripts": {
     "start": "npx webpack -w -c webpack.config.js",
-    "build": "npx webpack -c webpack.config.prod.js",
-    "publish": ""
+    "build": "npx webpack -c webpack.config.prod.js"
+  },
+  "keywords": [
+    "templating", "web"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jiriKralovec/nucleus.git"
+  },
+  "homepage": "https://github.com/jiriKralovec/nucleus",
+  "bugs": {
+    "url": "https://github.com/jiriKralovec/nucleus/issues"
   },
   "devDependencies": {
     "@babel/cli": "^7.15.4",
