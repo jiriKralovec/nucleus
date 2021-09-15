@@ -1,6 +1,6 @@
 export class Module {
     constructor() {
-        console.log('Module');
+        console.log('Mod222ule');
     }
 
 }

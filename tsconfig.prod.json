@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "outDir": "./build/www/",
+    "outDir": "./www/release/lib/",
     "noImplicitAny": true,
     "sourceMap": false,
     "module": "es6",
@@ -11,6 +11,6 @@
     "baseUrl": ".",
     "declaration": true
   },
-  "include": [ "src" ],
+  "include": [ "source/nucleus" ],
   "exclude": [ "node_modules", "**/*.spec.*" ]
 }

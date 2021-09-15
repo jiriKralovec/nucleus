@@ -6,3 +6,5 @@ export class App {
         this.b = new Module();
     }
 }
+
+console.log('here');

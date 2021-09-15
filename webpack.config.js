@@ -1,5 +1,6 @@
 const path = require('path');
 const glob = require('glob');
+const { debugPath, sourcePath } = require('./environment');
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = [
@@ -26,11 +27,11 @@ module.exports = [
         resolve: {
             extensions: ['.tsx', '.ts', '.js'],
             alias: {
-                lib: path.resolve(process.cwd(), 'src/')
+                lib: path.resolve(process.cwd(), `${sourcePath}/nucleus`)
             }
         },
         entry: {
-            main: glob.sync(`./example/**/*.{ts,tsx,js,html}`)
+            main: glob.sync(`${sourcePath}/example/**/*.{ts,tsx,js,html}`)
         },
         plugins: [
             new HtmlWebpackPlugin({
@@ -39,16 +40,16 @@ module.exports = [
         ],
         output: {
             filename: '[name].js',
-            path: path.resolve(__dirname, 'dist/example'),
+            path: path.resolve(__dirname, `${debugPath}/example`),
             clean: true
         },
         devServer: {
             liveReload: true,
             static: {
-                directory: path.join(__dirname, 'dist/example'),
+                directory: path.join(__dirname, `${debugPath}/example`),
                 watch: true
             },
-            watchFiles: [ "dist/**/*" ],
+            watchFiles: [ `${debugPath}/**/*` ],
             client: {
                 overlay: {
                     errors: true,
@@ -65,7 +66,7 @@ module.exports = [
         mode: 'development',
         output: {
             filename: '[name].js',
-            path: path.resolve(__dirname, 'dist/library'),
+            path: path.resolve(__dirname, `${debugPath}/nucleus`),
         },
         devtool: 'inline-source-map',
         module: {
@@ -80,11 +81,11 @@ module.exports = [
         resolve: {
             extensions: ['.tsx', '.ts', '.js'],
             alias: {
-                lib: path.resolve(process.cwd(), 'src/')
+                lib: path.resolve(process.cwd(), `${sourcePath}/nucleus`)
             }
         },
         entry: {
-            main: glob.sync(`./src/**/*.{ts,tsx,js}`)
+            main: glob.sync(`${sourcePath}/nucleus/**/*.{ts,tsx,js}`)
         }
     }
 ];

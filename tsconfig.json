@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "outDir": "./dist/",
+    "outDir": "./www/debug/",
     "noImplicitAny": true,
     "sourceMap": true,
     "module": "es6",
@@ -10,9 +10,9 @@
     "moduleResolution": "node",
     "baseUrl": ".",
     "paths": {
-      "lib/*": [ "src/*" ]
+      "lib/*": [ "source/nucleus/*" ]
     }
   },
-  "include": [ "src" ],
+  "include": [ "source/nucleus" ],
   "exclude": [ "node_modules", "**/*.spec.*" ]
 }
