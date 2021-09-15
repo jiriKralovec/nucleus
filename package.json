@@ -2,8 +2,8 @@
   "name": "@jiriKralovec/nucleus",
   "version": "0.0.1",
   "description": "Simple TypeScript web component library for building fast and simple websites",
-  "main": "build/main.js",
-  "types": "build/main.d.ts",
+  "main": "main.js",
+  "types": "main.d.ts",
   "files": [
     "build"
   ],
@@ -11,8 +11,7 @@
   "license": "ISC",
   "scripts": {
     "start": "npx webpack -w -c webpack.config.js",
-    "build": "npx webpack -c webpack.config.prod.js",
-    "publish": "npm publish"
+    "build": "npx webpack -c webpack.config.prod.js"
   },
   "keywords": [
     "templating",
