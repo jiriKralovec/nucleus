@@ -1,8 +1,9 @@
 const path = require('path');
 const glob = require('glob');
-const CopyPlugin = require("copy-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = [
+    /** Example */
     {
         mode: 'development',
         devtool: 'inline-source-map',
@@ -13,6 +14,13 @@ module.exports = [
                     use: 'ts-loader',
                     exclude: /node_modules/,
                 },
+                {
+                    test: /\.html$/i,
+                    loader: "html-loader",
+                    options: {
+                        sources: false
+                    }
+                }
             ],
         },
         resolve: {
@@ -22,20 +30,37 @@ module.exports = [
             }
         },
         entry: {
-            main: glob.sync(`./example/**/*.{ts,tsx,js}`)
+            main: glob.sync(`./example/**/*.{ts,tsx,js,html}`)
         },
         plugins: [
-            new CopyPlugin({
-                patterns: [
-                    { from: 'example/*.html', to: '[name].html' }
-                ]
+            new HtmlWebpackPlugin({
+                title: 'Output management'
             })
         ],
         output: {
             filename: '[name].js',
             path: path.resolve(__dirname, 'dist/example'),
+            clean: true
+        },
+        devServer: {
+            liveReload: true,
+            static: {
+                directory: path.join(__dirname, 'dist/example'),
+                watch: true
+            },
+            watchFiles: [ "dist/**/*" ],
+            client: {
+                overlay: {
+                    errors: true,
+                    warnings: false
+                },
+                progress: true
+            },
+            compress: false,
+            port: 9000
         }
     },
+    /** Library */
     {
         mode: 'development',
         output: {
