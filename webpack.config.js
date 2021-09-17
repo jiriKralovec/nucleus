@@ -35,13 +35,13 @@ module.exports = [
         },
         plugins: [
             new HtmlWebpackPlugin({
-                title: 'Output management'
+                title: 'Output management',
+                template: `${sourcePath}/example/index.html`
             })
         ],
         output: {
             filename: '[name].js',
-            path: path.resolve(__dirname, `${debugPath}/example`),
-            clean: true
+            path: path.resolve(__dirname, `${debugPath}/example`)
         },
         devServer: {
             liveReload: true,
@@ -75,7 +75,7 @@ module.exports = [
                     test: /\.tsx?$/,
                     use: 'ts-loader',
                     exclude: /node_modules/,
-                },
+                }
             ],
         },
         resolve: {
